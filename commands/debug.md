@@ -48,5 +48,6 @@ mcp_unityMCP_read_console({ action: "get", types: ["error", "warning", "log"], c
 
 - 全程都需要使用 Unity MCP，可以帮助你获取日志、开始和关闭游戏
 - 在开始游戏和编译阶段可能需要等待时间，可能有 **1 分钟以上** 的情况
-- 修复完成后，记得清理所有临时调试日志
+- 修复完成后，记得清理所有临时调试日志（统一使用 `[DEBUG-TEMP]` 标记）
+- 若因上下文不足/对话终止导致遗留，可直接运行 `/clean-debug` 一键兜底清理
 

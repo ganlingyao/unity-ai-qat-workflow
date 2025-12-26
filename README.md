@@ -21,6 +21,18 @@
 
 ---
 
+### `/clean-debug` - 清理临时调试日志
+
+当 `/debug` 过程中由于上下文不足、对话终止、或人工遗漏导致临时日志没有被清理时，用该指令一键兜底清理：
+- 清空 Unity Console
+- 删除代码里所有带 `[DEBUG-TEMP]` 的临时调试日志与相关片段
+
+**适用场景**：
+- 调试中断后回到“干净基线”
+- 提交 PR 前的卫生清理
+
+---
+
 ### `/fixer` - 自动修复错误
 
 控制台出现编译错误或警告？AI 会自动获取所有错误信息，分析根本原因，按优先级逐个修复。
@@ -63,6 +75,7 @@
 | 指令 | 功能 | 说明 |
 |-----|------|-----|
 | `/debug` | 控制台调试 | 使用 Unity MCP 获取日志，分析运行时问题并调试修复 |
+| `/clean-debug` | 清理调试日志 | 清空 Unity Console，并删除代码中所有 `[DEBUG-TEMP]` 临时日志 |
 | `/fixer` | 修复错误 | 获取控制台警告/报错，分析原因并快速修复 |
 | `/tester` | 运行测试 | 自动运行 EditMode/PlayMode 测试，生成报告并判定结果 |
 | `/plan-workflow` | 开发工作流 | 阅读文档、盘点进度、生成待执行任务 |
@@ -211,6 +224,7 @@ cd .cursor/commands
 
 # 下载 Cursor 指令文件
 curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/debug.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/clean-debug.md
 curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/fixer.md
 curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/tester.md
 curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/plan-workflow.md
@@ -239,6 +253,22 @@ curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/
 5. 🔄 迭代修复直到问题解决
 
 **提示**：运行游戏后再调用此指令，效果更佳。
+
+---
+
+### `/clean-debug` - 清理临时调试日志
+
+```
+/clean-debug
+```
+
+**执行内容**：
+1. 🧹 清空 Unity Console
+2. 🔎 全局扫描 `[DEBUG-TEMP]`
+3. 🗑️ 删除所有临时调试日志与相关片段
+4. ✅ 编译后复核无新增 Error/Warning
+
+**提示**：当 `/debug` 中断或遗漏清理时，用它快速回到干净状态。
 
 ---
 
@@ -303,6 +333,7 @@ curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/
 ├── .cursor/
 │   ├── commands/
 │   │   ├── debug.md
+│   │   ├── clean-debug.md
 │   │   ├── fixer.md
 │   │   ├── tester.md
 │   │   └── plan-workflow.md

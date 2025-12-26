@@ -16,6 +16,7 @@ REPO_URL="https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/mai
 COMMANDS_DIR=".cursor/commands"
 COMMANDS=(
     "debug.md"
+    "clean-debug.md"
     "fixer.md"
     "tester.md"
     "plan-workflow.md"
@@ -367,6 +368,7 @@ show_result() {
     echo ""
     echo "Installed Cursor commands:"
     echo "  /debug          - Unity console debugging"
+    echo "  /clean-debug    - Clean /debug temp logs and clear Console"
     echo "  /fixer          - Fix console errors"
     echo "  /tester         - Run tests and generate report"
     echo "  /plan-workflow  - Development workflow planning"
