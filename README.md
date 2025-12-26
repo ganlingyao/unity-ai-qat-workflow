@@ -77,10 +77,10 @@
 
 ```bash
 # Git Bash / WSL
-curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh | bash
 
 # PowerShell
-curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/install.sh -o install.sh; bash install.sh; rm install.sh
+curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh -o install.sh; bash install.sh; rm install.sh
 ```
 
 安装完成后，在 Cursor 中输入 `/debug`、`/fixer`、`/tester` 等指令即可使用！
@@ -172,12 +172,12 @@ curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/mai
 
 **Git Bash（推荐）**：
 ```bash
-curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh | bash
 ```
 
 **PowerShell**：
 ```powershell
-curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/install.sh -o install.sh; bash install.sh; rm install.sh
+curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh -o install.sh; bash install.sh; rm install.sh
 ```
 
 > 💡 PowerShell 需要先下载脚本再用 bash 执行，因为 PowerShell 不能直接管道到 bash
@@ -188,7 +188,7 @@ curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/mai
 
 ```bash
 # 克隆仓库
-git clone https://github.com/MayoooooG/unity-ai-qat-workflow.git
+git clone https://github.com/ganlingyao/unity-ai-qat-workflow.git
 
 # 进入仓库目录
 cd unity-ai-qat-workflow
@@ -210,15 +210,15 @@ mkdir -p .cursor/standards
 cd .cursor/commands
 
 # 下载 Cursor 指令文件
-curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/commands/debug.md
-curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/commands/fixer.md
-curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/commands/tester.md
-curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/commands/plan-workflow.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/debug.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/fixer.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/tester.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/commands/plan-workflow.md
 
 # 下载内置规范文档
 cd ../standards
-curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/standards/csharp-coding-standard.md
-curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/standards/development-standard.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/standards/csharp-coding-standard.md
+curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/standards/development-standard.md
 ```
 
 ---
@@ -330,7 +330,7 @@ curl -O https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/s
 
 ```bash
 # 远程更新
-curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh | bash
 
 # 本地更新
 cd unity-ai-qat-workflow && git pull && ./install.sh /path/to/project

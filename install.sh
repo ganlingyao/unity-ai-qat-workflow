@@ -2,7 +2,7 @@
 # ============================================================================
 # Unity AI QAT Workflow - 一键安装脚本
 # 
-# 远程安装: curl -fsSL https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main/install.sh | bash
+# 远程安装: curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh | bash
 # 本地安装: ./install.sh [目标项目路径]
 # ============================================================================
 
@@ -10,7 +10,7 @@
 # set -e
 
 # 配置
-REPO_URL="https://raw.githubusercontent.com/MayoooooG/unity-ai-qat-workflow/main"
+REPO_URL="https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main"
 
 # Cursor 指令文件
 COMMANDS_DIR=".cursor/commands"
