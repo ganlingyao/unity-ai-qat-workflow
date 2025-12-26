@@ -386,9 +386,3 @@ MIT License
 
 欢迎提交 Issue 和 Pull Request！
 
----
-
-## 📋 发布后 TODO
-
-- [ ] 测试 `install.sh` 远程安装
-- [ ] 验证所有指令正常工作
