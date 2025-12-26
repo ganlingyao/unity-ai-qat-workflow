@@ -80,7 +80,7 @@
 curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh | bash
 
 # PowerShell
-curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh -o install.sh; bash install.sh; rm install.sh
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh" -OutFile install.sh; bash install.sh; Remove-Item install.sh
 ```
 
 安装完成后，在 Cursor 中输入 `/debug`、`/fixer`、`/tester` 等指令即可使用！
@@ -177,7 +177,7 @@ curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/ma
 
 **PowerShell**：
 ```powershell
-curl -fsSL https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh -o install.sh; bash install.sh; rm install.sh
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/install.sh" -OutFile install.sh; bash install.sh; Remove-Item install.sh
 ```
 
 > 💡 PowerShell 需要先下载脚本再用 bash 执行，因为 PowerShell 不能直接管道到 bash
