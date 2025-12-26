@@ -179,7 +179,10 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ganlingyao/unity-ai-qa
 
 ## 📦 安装方式
 
-### 方式一：远程一键安装（推荐）
+> 说明：本仓库的“一键安装脚本”主要面向 **Cursor**（依赖 Cursor 识别 `.cursor/commands/*.md` 作为 Slash Commands）。
+> 其他 AI 平台/IDE 同样可以使用这些指令模板，但安装/导入方式不同，见下方「方式四：其他平台（通用导入）」。
+
+### 方式一：远程一键安装（推荐，Cursor）
 
 在 **Unity 项目根目录** 打开终端：
 
@@ -195,7 +198,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ganlingyao/unity-ai-qa
 
 > 💡 PowerShell 需要先下载脚本再用 bash 执行，因为 PowerShell 不能直接管道到 bash
 
-### 方式二：本地安装
+### 方式二：本地安装（Cursor）
 
 如果你已经克隆了本仓库：
 
@@ -213,7 +216,7 @@ cd unity-ai-qat-workflow
 ./install.sh ../my-game
 ```
 
-### 方式三：手动安装
+### 方式三：手动安装（Cursor）
 
 ```bash
 # 创建目录
@@ -234,6 +237,45 @@ cd ../standards
 curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/standards/csharp-coding-standard.md
 curl -O https://raw.githubusercontent.com/ganlingyao/unity-ai-qat-workflow/main/standards/development-standard.md
 ```
+
+---
+
+### 方式四：其他平台（通用导入）
+
+这些“指令”本质上是**可复用的 Prompt 模板**（位于 `commands/*.md`）。不同平台的差别主要在于是否支持：
+- **自定义命令**（例如 Slash Command / Quick Command / Prompt Shortcut）
+- **MCP 工具调用**（否则无法自动执行 `mcp_unityMCP_*`，只能作为流程清单使用）
+
+#### 选择路径（按平台能力）
+
+| 你使用的平台能力 | 推荐方式 | 你能获得的效果 |
+|---|---|---|
+| 支持“自定义命令” + 支持 MCP | 导入成命令（推荐） | 接近 Cursor：一条命令触发完整流程 |
+| 不支持“自定义命令”但支持保存 Prompt 模板 | 保存为模板 | 选择模板发送即可（无需每次找文件） |
+| 仅支持对话（无法保存模板） | 手动复制粘贴 | 每次从 `commands/*.md` 复制内容到对话 |
+
+#### A. 导入成“自定义命令”（如果平台支持）
+
+1. 打开仓库中的 `commands/*.md`
+2. 在你的 AI 平台里创建自定义命令（名称建议保持一致）：
+   - `/debug`
+   - `/clean-debug`
+   - `/fixer`
+   - `/tester`
+   - `/plan-workflow`
+3. 将对应 `.md` 文件的内容粘贴为命令内容（建议保留顶部 `description` 与正文流程）
+
+#### B. 保存为“Prompt 模板”（如果平台不支持命令但支持模板库）
+
+- 把 `commands/*.md` 存进你平台的模板库/Prompt Library，按相同名称保存。
+- 使用时选择模板并发送即可。
+
+#### C. 纯手动复制粘贴（兜底方案）
+
+- 直接打开 `commands/debug.md`（或其它命令文件），复制全文到对话窗口发送。
+- 建议团队在项目内建立统一目录保存这些模板（例如 `Docs/AI/Prompts/`），便于维护与分发。
+
+> 重要：即使平台不支持 MCP，你仍可以把这些模板当作“调试/修复/测试的 SOP 清单”使用；只是需要你手动执行 Unity 内的操作并把结果粘贴回对话。
 
 ---
 
